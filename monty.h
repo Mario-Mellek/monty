@@ -37,6 +37,12 @@ typedef struct instruction_s
 } instruction_t;
 extern instruction_t instructions[];
 char *getNewLine(FILE *fp);
+
+void skipLine(char *line);
+int checkOpCode(char *opCode, instruction_t *instructions, size_t j, size_t i);
+void processFile(FILE *fp);
+
+
 void nopOp(stack_t **stack, unsigned int line_number);
 
 #endif
