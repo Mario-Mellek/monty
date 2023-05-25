@@ -1,20 +1,18 @@
 #include "monty.h"
 #include <unistd.h>
 
-
-instruction_t instructions[] = {
-	{"push", NULL},
-	{"pall", NULL},
-	{"nop", NULL},
-	{NULL, NULL}
-};
-
 int main(int argc, char **argv)
 {
 	FILE *fp = fopen(argv[1], "r");
 	size_t i, j = 0;
 	char *opCode, *line = NULL;
 	int opExists;
+	instruction_t instructions[] = {
+		{"push", NULL},
+		{"pall", NULL},
+		{"nop", NULL},
+		{NULL, NULL}
+	};
 
 	if (argc != 2)
 	{
