@@ -37,5 +37,6 @@ typedef struct instruction_s
 } instruction_t;
 extern instruction_t instructions[];
 char *getNewLine(FILE *fp);
+void nopOp(stack_t **stack, unsigned int line_number);
 
 #endif

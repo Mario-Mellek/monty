@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 	instruction_t instructions[] = {
 		{"push", NULL},
 		{"pall", NULL},
-		{"nop", NULL},
+		{"nop", nopOp},
 		{NULL, NULL}
 	};
 
