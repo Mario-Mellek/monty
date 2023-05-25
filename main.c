@@ -5,6 +5,7 @@
 instruction_t instructions[] = {
 	{"push", NULL},
 	{"pall", NULL},
+	{"nop", NULL},
 	{NULL, NULL}
 };
 
