@@ -12,9 +12,8 @@ instruction_t instructions[] = {
 int main(int argc, char **argv)
 {
 	FILE *fp = fopen(argv[1], "r");
-	size_t i, j, len = 0;
+	size_t i, j = 0;
 	char *opCode, *line = NULL;
-	ssize_t read;
 	int opExists;
 
 	if (argc != 2)
@@ -28,17 +27,21 @@ int main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	}
 
-
-	for (i = 0; (read = getline(&line, &len, fp)) != -1; i++)
+	for (i = 0, line = getNewLine(fp); line != NULL;
+			i++, line = getNewLine(fp))
 	{
 		if (line[0] == '\n' || line[0] == '#')
 		{
 			printf("Skipped\n");
+			free(line);
 			continue;
 		}
 		opCode = strtok(line, "\t \n");
 		if (!opCode)
+		{
+			free(line);
 			continue;
+		}
 		for (j = 0, opExists = 0; instructions[j].opcode != NULL; j++)
 		{
 			if (strcmp(opCode, instructions[j].opcode) == 0)
@@ -51,11 +54,12 @@ int main(int argc, char **argv)
 		if (!opExists)
 		{
 			fprintf(stderr, "L%lu: unknown instruction %s\n", i, opCode);
+			free(line);
 			return (EXIT_FAILURE);
 		}
+		free(line);
 	}
 	printf("Successfully Read: %s\n", argv[1]);
-	free(line);
 	fclose(fp);
 	return (EXIT_SUCCESS);
 }
