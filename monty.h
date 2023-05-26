@@ -49,6 +49,8 @@ void subOp(stack_t **stack, unsigned int line_number);
 void divOp(stack_t **stack, unsigned int line_number);
 void mulOp(stack_t **stack, unsigned int line_number);
 void modOp(stack_t **stack, unsigned int line_number);
+void pcharOp(stack_t **stack, unsigned int line_number);
+
 
 void checkOps(char *line, unsigned int line_number,
 		stack_t **stack, instruction_t instructions[]);

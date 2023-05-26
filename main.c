@@ -21,6 +21,7 @@ int main(int argc, char **argv)
 		{"div", divOp},
 		{"mul", mulOp},
 		{"mod", modOp},
+		{"pchar", pcharOp},
 		{NULL, NULL}
 	};
 	FILE *fp = fopen(argv[1], "r");
