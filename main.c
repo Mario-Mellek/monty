@@ -26,7 +26,6 @@ int main(int argc, char **argv)
 	};
 	FILE *fp = fopen(argv[1], "r");
 	stack_t *stack = NULL;
-	stack_t *temp = NULL;
 
 	if (argc != 2)
 	{
@@ -39,11 +38,7 @@ int main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	}
 	processFile(fp, &stack, instructions);
-	for (temp = stack; stack != NULL; temp = temp->next)
-	{
-		stack = stack->next;
-		free(temp);
-	}
+	freeMem(&stack);
 	fclose(fp);
 	return (EXIT_SUCCESS);
 }

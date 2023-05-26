@@ -55,6 +55,7 @@ void pcharOp(stack_t **stack, unsigned int line_number);
 void checkOps(char *line, unsigned int line_number,
 		stack_t **stack, instruction_t instructions[]);
 void processFile(FILE *fp, stack_t **stack, instruction_t instructions[]);
+void freeMem(stack_t **stack);
 
 #endif /* MONTY_H */
 
