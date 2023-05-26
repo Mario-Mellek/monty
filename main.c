@@ -13,6 +13,7 @@ int main(int argc, char **argv)
 		{"push", push},
 		{"pall", pall},
 		{"nop", nopOp},
+		{"pint", pintOp},
 		{NULL, NULL}
 	};
 	FILE *fp = fopen(argv[1], "r");
