@@ -14,6 +14,7 @@ int main(int argc, char **argv)
 		{"pall", pall},
 		{"nop", nopOp},
 		{"pint", pintOp},
+		{"pop", popOp},
 		{NULL, NULL}
 	};
 	FILE *fp = fopen(argv[1], "r");
