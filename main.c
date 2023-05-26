@@ -18,6 +18,7 @@ int main(int argc, char **argv)
 		{"swap", swapOp},
 		{"add", addOp},
 		{"sub", subOp},
+		{"div", divOp},
 		{NULL, NULL}
 	};
 	FILE *fp = fopen(argv[1], "r");
