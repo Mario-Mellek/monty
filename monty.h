@@ -4,8 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <sys/types.h>
-#define MAX_LINE_LENGTH 1024
+#include <ctype.h>
+#include <unistd.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -30,19 +31,20 @@ typedef struct stack_s
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO
  */
+
 typedef struct instruction_s
 {
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-extern instruction_t instructions[];
-char *getNewLine(FILE *fp);
 
-void skipLine(char *line);
-int checkOpCode(char *opCode, instruction_t *instructions, size_t j, size_t i);
-void processFile(FILE *fp);
-
-
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
 void nopOp(stack_t **stack, unsigned int line_number);
 
-#endif
+void checkOps(char *line, unsigned int line_number,
+		stack_t **stack, instruction_t instructions[]);
+void processFile(FILE *fp, stack_t **stack, instruction_t instructions[]);
+
+#endif /* MONTY_H */
+

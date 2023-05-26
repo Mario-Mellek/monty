@@ -1,43 +1,21 @@
 #include "monty.h"
 
 /**
- * processFile - Processes a file line by line.
- * @fp: file pointer
+ * processFile - Processes a file line by line
+ * @fp: Pointer to the file to be processed.
+ * @stack: Pointer to the top of the stack.
+ * @instructions: Array of valid functions.
  */
 
-void processFile(FILE *fp)
+
+void processFile(FILE *fp, stack_t **stack, instruction_t instructions[])
 {
-	size_t i, j = 0;
-	char *opCode, *line = NULL;
-	int opExists;
-	instruction_t instructions[] = {
-		{"push", NULL},
-		{"pall", NULL},
-		{"nop", nopOp},
-		{NULL, NULL}
-	};
-	for (i = 0, line = getNewLine(fp); line != NULL;
-			i++, line = getNewLine(fp))
+	char line[256];
+	size_t i = 0;
+
+	while (fgets(line, sizeof(line), fp) != NULL)
 	{
-		skipLine(line);
-		if (line[0] == '\n' || line[0] == '#')
-		{
-			continue;
-		}
-		opCode = strtok(line, "\t \n");
-		if (!opCode)
-		{
-			free(line);
-			continue;
-		}
-		opExists = checkOpCode(opCode, instructions, j, i);
-		if (opExists == EXIT_FAILURE)
-		{
-			free(line);
-			fclose(fp);
-			exit(EXIT_FAILURE);
-		}
-		free(line);
+		i++;
+		checkOps(line, i, stack, instructions);
 	}
-	printf("Successfully Read\n");
 }
