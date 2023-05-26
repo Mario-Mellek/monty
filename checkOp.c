@@ -1,5 +1,4 @@
 #include "monty.h"
-#include <ctype.h>
 
 /**
  * checkOps - Checks and executes the corresponding operation.
@@ -15,7 +14,7 @@ void checkOps(char *line, unsigned int line_number,
 	char *opCode = NULL;
 	int i, codeExists = 0;
 
-	if (line[0] == '\n' || line[0] == '#' || isspace(line[0]))
+	if (line[0] == '\n' || line[0] == '#' || line[0] == ' ')
 		return;
 
 	opCode = strtok(line, " \t\n");
