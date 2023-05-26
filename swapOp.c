@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * swapOp - Swaps the top two elements of the stack.
+ * @stack: Pointer to the top of the stack.
+ * @line_number: The line number of the file.
+ */
+
 void swapOp(stack_t **stack, unsigned int line_number)
 {
 	int temp;
