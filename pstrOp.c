@@ -11,7 +11,7 @@ void pstrOp(stack_t **stack, unsigned int line_number)
 	stack_t *temp = NULL;
 	(void)line_number;
 
-	if ((*stack) == NULL || (*stack)->next == NULL)
+	if ((*stack) == NULL)
 	{
 		printf("0\n");
 		return;
@@ -22,6 +22,9 @@ void pstrOp(stack_t **stack, unsigned int line_number)
 	{
 		printf("%c", temp->n);
 	}
-
 	printf("\n");
+	if ((*stack)->next == NULL)
+	{
+		printf("0\n");
+	}
 }
