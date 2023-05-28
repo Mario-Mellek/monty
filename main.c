@@ -22,6 +22,7 @@ int main(int argc, char **argv)
 		{"mul", mulOp},
 		{"mod", modOp},
 		{"pchar", pcharOp},
+		{"pstr", pstrOp},
 		{NULL, NULL}
 	};
 	FILE *fp = fopen(argv[1], "r");
