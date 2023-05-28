@@ -27,5 +27,4 @@ void pstrOp(stack_t **stack, unsigned int line_number)
 	{
 		printf("0\n");
 	}
-	printf("\n");
 }
