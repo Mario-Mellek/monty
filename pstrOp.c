@@ -15,7 +15,7 @@ void pstrOp(stack_t **stack, unsigned int line_number)
 		return;
 
 	for (temp = *stack; temp != NULL && temp->n != 0
-			&& temp->n > 0 && temp->n <= 127;
+			&& temp->n >= 0 && temp->n <= 127;
 			temp = temp->next)
 	{
 		printf("%c", temp->n);
