@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * pstrOp - Prints the string starting at the top of the stack.
+ * @stack: Pointer to the top of the stack.
+ * @line_number: Not used (casted to void)
+ */
+
 void pstrOp(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = NULL;
