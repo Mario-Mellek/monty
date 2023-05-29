@@ -24,6 +24,7 @@ int main(int argc, char **argv)
 		{"pchar", pcharOp},
 		{"pstr", pstrOp},
 		{"rotl", rotlOp},
+		{"rotr", rotrOp},
 		{NULL, NULL}
 	};
 	FILE *fp = fopen(argv[1], "r");

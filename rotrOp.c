@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+  * rotrOp - Rotates the stack.
+  * @stack: Pointer to the top of the stack.
+  * @line_number: Not used (casted to void)
+ */
+
 void rotrOp(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = NULL;
