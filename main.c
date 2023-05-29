@@ -23,6 +23,7 @@ int main(int argc, char **argv)
 		{"mod", modOp},
 		{"pchar", pcharOp},
 		{"pstr", pstrOp},
+		{"rotl", rotlOp},
 		{NULL, NULL}
 	};
 	FILE *fp = fopen(argv[1], "r");
