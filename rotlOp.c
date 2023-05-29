@@ -12,4 +12,7 @@ void rotlOp(stack_t **stack, unsigned int line_number)
 		;
 	temp->next = *stack;
 	(*stack)->prev = temp;
+	*stack = (*stack)->next;
+	(*stack)->prev->next = NULL;
+	(*stack)->prev = NULL;
 }
