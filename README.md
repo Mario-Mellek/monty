@@ -8,13 +8,13 @@ Monty bytecodes are stored in files with a .m extension. Each line contains a si
 
 ### Compilation
 
-The files can be compiled into an executable monty using:  
+The files can be compiled into an executable monty using:
 `gcc -Wall -Werror -Wextra -pedantic -std=c89 *.c -o monty`
 
 ### Usage
 
-Run the command:  
-`./monty file`  
+Run the command:
+`./monty file`
 Where file is the path to a file containing Monty bytecodes.
 
 #### The interpreter will run the bytecodes in the file line by line until either:
